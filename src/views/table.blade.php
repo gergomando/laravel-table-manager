@@ -3,21 +3,21 @@
     <thead class=" text-primary">
       <tr>
         @foreach($fields as $property => $caption)
-      	<th>
-        		{{{ $caption }}}
-      	</th>
+        <th>
+            {{{ $caption }}}
+        </th>
         @endforeach
         @if($hasAction)
         <th></th>
         @endif
-    	</tr>
+      </tr>
     </thead>
     <tbody>
-    	@foreach($items as $item)
+      @foreach($items as $item)
       <tr>
         @foreach($fields as $property => $caption)
         <td>
-        		{!! $item[$property] !!}
+            {!! $item[$property] !!}
         </td>
         @endforeach
         @if($hasAction)
@@ -29,4 +29,7 @@
       @endforeach
     </tbody>
   </table>
+  @if($paginate)
+  {{{ $items->render() }}}
+  @endif
 </div>
