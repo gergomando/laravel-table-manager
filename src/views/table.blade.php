@@ -22,7 +22,7 @@
         @endforeach
         @if($hasAction)
         <td>
-          {!! $item->actions !!}
+          {!! $item['actions'] !!}
         </td>
         @endif
       </tr>
